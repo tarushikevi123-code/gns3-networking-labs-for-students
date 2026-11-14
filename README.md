@@ -2,68 +2,77 @@
 
 ## Project Overview
 
-This repository contains a collection of 10 practical networking laboratories developed using GNS3 for undergraduate networking students.
+This repository contains practical networking laboratories implemented using GNS3, Linux-based network nodes and Docker environments.
 
-The project focuses on designing, configuring, testing and documenting network infrastructures and services through hands-on laboratory exercises.
+The laboratories focus on routing protocols, IPv6 networking, Ethernet frame analysis, network troubleshooting and packet inspection.
 
-Each laboratory includes network topologies, configuration files, practical instructions and verification procedures to help students understand networking concepts through experimentation.
-
-## Laboratory Objectives
-
-- Develop practical networking skills using GNS3.
-- Understand routing protocols and IPv6 communication.
-- Configure and manage network services.
-- Explore network security concepts and potential vulnerabilities.
-- Implement VPN and high-availability solutions.
-- Introduce network monitoring and observability tools.
-- Provide reproducible laboratory environments and step-by-step instructions.
+Each laboratory includes its own network topology, configurations, practical implementation, testing procedures and technical documentation.
 
 ## Completed Laboratories
 
-### Lab 01 – Static IPv6 Routing
-Implementation and configuration of static IPv6 routes in a GNS3 network topology.
+### Lab 01 – IPv6 Static Routing
 
-### Lab 02 – Dynamic IPv6 Routing with OSPF
-Implementation of dynamic IPv6 routing using OSPF and verification of routing connectivity.
+**Platform:** GNS3, Linux
+
+- IPv6 addressing and interface configuration.
+- IPv6 forwarding on Linux routers.
+- Static IPv6 route configuration.
+- Neighbor Discovery Protocol (NDP).
+- End-to-end connectivity testing.
+- Route failure simulation and troubleshooting.
+- External IPv6 connectivity through an ISP router.
+
+### Lab 02 – Dynamic IPv6 Routing with OSPFv3
+
+**Platform:** GNS3, Docker, Linux, FRRouting (FRR)
+
+- OSPFv3 configuration and implementation.
+- IPv6 dynamic routing using Area 0.
+- Router IDs and passive interfaces.
+- OSPF neighbor and routing table verification.
+- Link-state database analysis.
+- Default route origination and withdrawal.
+- Routing failure experiments and troubleshooting.
 
 ### Lab 03 – Ethernet Frames, IPv4, ICMP, TTL and Spoofing
-Practical exploration of Ethernet frames and IPv4 communication, including ICMP, TTL behavior and spoofing-related concepts.
 
-## Planned Laboratories
+**Platform:** GNS3, Linux, Python, Scapy, Wireshark
 
-Additional exercises will be published as they are developed and tested.
+- Ethernet II frame structure and analysis.
+- Layer 2 MAC addressing and Layer 3 IPv4 addressing.
+- Custom Ethernet frame generation using Scapy.
+- Ethernet/IP/ICMP encapsulation.
+- ICMP Echo Request and Reply analysis.
+- TTL behaviour during packet forwarding.
+- Controlled source-IP spoofing in an isolated laboratory network.
+- Packet inspection using Wireshark and tcpdump.
+
+## Technologies and Tools
+
+- GNS3
+- Docker
+- Linux (Ubuntu / Debian)
+- IPv4 and IPv6
+- Static Routing
+- OSPFv3
+- FRRouting (FRR)
+- Python
+- Scapy
+- Wireshark
+- tcpdump
 
 ## Repository Structure
 
-Each laboratory is organized separately and includes its own documentation, configurations, topology files and screenshots.
-
-## Tools and Technologies
-
-- GNS3
-- Cisco Networking Devices
-- IPv4 and IPv6
-- OSPF
-- Linux
-- Network Protocol Analysis
-
-Additional technologies and tools will be introduced throughout the remaining laboratories.
-
-## Expected Deliverables
-
-- Functional GNS3 laboratory projects.
-- Step-by-step laboratory instructions.
-- Network configuration files and scripts.
-- Screenshots and verification results.
-- Technical documentation for each exercise.
+Each laboratory has a separate directory containing its topology files, configurations, scripts, screenshots and documentation.
 
 ## Project Status
 
-**3 of 10 laboratories completed.**
+**3 completed laboratories.**
 
-The remaining laboratories are under development.
+Additional networking laboratories are being developed and will be added to this repository.
 
 ---
 
-**Project Type:** Network Engineering / Educational Laboratories  
-**Platform:** GNS3  
-**Status:** In Progress
+**Project Area:** Network Engineering / Routing & Switching / Network Analysis
+
+**Platform:** GNS3
