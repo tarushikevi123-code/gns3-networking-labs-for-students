@@ -1,0 +1,30 @@
+
+# ==========================================
+# R1 - Subnet Router
+# Lab 01: IPv6 Static Routing
+# ==========================================
+
+# Enable interfaces
+ip link set eth0 up
+ip link set eth1 up
+
+# IPv6 addressing
+ip -6 addr replace 2001:db8:10:3::1/64 dev eth0
+ip -6 addr replace 2001:db8:10:1::1/64 dev eth1
+
+# Enable IPv6 forwarding
+sysctl -w net.ipv6.conf.all.forwarding=1
+
+# Static routes
+# Route to HOST-B network through R2
+ip -6 route replace 2001:db8:10:2::/64 via 2001:db8:10:1::2 dev eth1
+
+# Route to R2-R3 transit network
+ip -6 route replace 2001:db8:20:1::/64 via 2001:db8:10:1::2 dev eth1
+
+# Route to external IPv6 network through R2
+ip -6 route replace 2001:db8:30::/48 via 2001:db8:10:1::2 dev eth1
+
+# Verification
+ip -br -6 addr
+ip -6 route
