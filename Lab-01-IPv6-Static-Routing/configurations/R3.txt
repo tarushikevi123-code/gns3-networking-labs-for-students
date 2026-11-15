@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# R3 - Edge Router
+# Lab 01: IPv6 Static Routing with GNS3
+# Run as root inside the R3 Linux node.
+set -e
+
+# Bring interfaces up
+ip link set eth0 up
+ip link set eth1 up
+
+# Configure IPv6 addresses
+ip -6 addr replace 2001:db8:20:1::1/64 dev eth0
+ip -6 addr replace 2001:db8:30:1::1/64 dev eth1
+
+# Enable IPv6 forwarding
+sysctl -w net.ipv6.conf.all.forwarding=1
+
+# Summary route to the internal network through R2
+ip -6 route replace 2001:db8:10::/48 via 2001:db8:20:1::2 dev eth0
+
+# Task 6: default route toward the ISP router
+ip -6 route replace default via 2001:db8:30:1::2 dev eth1
+
+# Verification
+ip -br -6 addr
+ip -6 route
