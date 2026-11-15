@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# HOST-A - End host behind R1
+# Lab 01: IPv6 Static Routing with GNS3
+# Run as root inside HOST-A.
+set -e
+
+ip link set eth0 up
+ip -6 addr replace 2001:db8:10:3::10/64 dev eth0
+ip -6 route replace default via 2001:db8:10:3::1 dev eth0
+
+# Verification
+ip -br -6 addr
+ip -6 route
