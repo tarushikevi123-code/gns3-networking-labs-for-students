@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# R2 - Core Router
+# Lab 01: IPv6 Static Routing with GNS3
+# Run as root inside the R2 Linux node.
+set -e
+
+# Bring interfaces up
+ip link set eth0 up
+ip link set eth1 up
+ip link set eth2 up
+
+# Configure IPv6 addresses
+ip -6 addr replace 2001:db8:10:1::2/64 dev eth0
+ip -6 addr replace 2001:db8:20:1::2/64 dev eth1
+ip -6 addr replace 2001:db8:10:2::1/64 dev eth2
+
+# Enable IPv6 forwarding
+sysctl -w net.ipv6.conf.all.forwarding=1
+
+# Route back to HostA's network through R1
+ip -6 route replace 2001:db8:10:3::/64 via 2001:db8:10:1::1 dev eth0
+
+# Task 6: route toward the external IPv6 prefix through R3
+ip -6 route replace 2001:db8:30::/48 via 2001:db8:20:1::1 dev eth1
+
+# Verification
+ip -br -6 addr
+ip -6 route
