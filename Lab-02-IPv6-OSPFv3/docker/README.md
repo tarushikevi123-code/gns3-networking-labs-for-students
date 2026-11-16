@@ -88,3 +88,35 @@ Required resources:
 **Platform:** GNS3 / Docker  
 **Routing Software:** FRRouting 10.5.1  
 **Status:** Completed
+
+
+## 9. Download Docker Images
+
+The six preconfigured Docker images used in this laboratory are available as a compressed archive.
+
+**Docker Images Archive:**
+
+[Download Dynamic IPv6 Routing Docker Images] (https://drive.google.com/file/d/1sSUk4uuRCajqr9O17Lyb8JGRk7zh5YU6/view)
+
+The archive contains the six custom images:
+
+- ubuntu-frr:r1-final
+- ubuntu-frr:r2-final
+- ubuntu-frr:r4-final
+- ubuntu-ipv6:h1-final
+- ubuntu-ipv6:h2-final
+- ubuntu-ipv6:isp-final
+
+### Import Docker Images
+
+After downloading the archive, run:
+
+```bash
+gzip -dc dynamic-ipv6-docker-images.tar.gz | docker load
+```
+
+Verify the imported images:
+
+```bash
+docker images
+```
