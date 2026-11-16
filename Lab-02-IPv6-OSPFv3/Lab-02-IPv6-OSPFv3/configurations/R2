@@ -1,0 +1,25 @@
+frr version 10.5.1
+frr defaults traditional
+hostname R-2
+log syslog informational
+service integrated-vtysh-config
+!
+interface eth0
+ ipv6 ospf6 area 0.0.0.0
+ ipv6 ospf6 network broadcast
+exit
+!
+interface eth1
+ ipv6 ospf6 area 0.0.0.0
+ ipv6 ospf6 passive
+exit
+!
+interface eth2
+ ipv6 ospf6 area 0.0.0.0
+ ipv6 ospf6 network broadcast
+exit
+!
+router ospf6
+ ospf6 router-id 2.2.2.2
+exit
+!
