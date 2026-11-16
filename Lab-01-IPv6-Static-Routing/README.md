@@ -18,6 +18,8 @@ The network consists of three routers, two end hosts and an ISP router, providin
 - Configure external IPv6 connectivity through an ISP router.
 
 ## 3. Network Topology
+<img width="1333" height="902" alt="image" src="https://github.com/user-attachments/assets/3615099c-20aa-49f9-ac84-c584e53c9dfa" />
+
 
 The laboratory consists of:
 
