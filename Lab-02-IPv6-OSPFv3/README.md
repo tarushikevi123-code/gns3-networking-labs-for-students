@@ -25,6 +25,8 @@ The implementation also includes an edge router configured to originate an exter
 ## 3. Network Architecture
 
 The laboratory consists of six GNS3 nodes:
+![OSPFv3 Network Topology]<img width="1485" height="943" alt="image" src="https://github.com/user-attachments/assets/9424e626-211b-4ac3-82ed-7880c2855683" />
+
 
 ### Routers
 
