@@ -26,7 +26,8 @@ The laboratory focuses on understanding Layer 2 and Layer 3 addressing, Ethernet
 
 ## 3. Network Architecture
 
-The laboratory consists of two IPv4 networks connected through a Network Emulator and router R2.
+The laboratory consists of two IPv4 networks connected through a Network Emulator and router R2.<img width="1432" height="880" alt="image" src="https://github.com/user-attachments/assets/5eeac8d9-b0a1-4ec6-9857-5e45655879be" />
+
 
 ### Left Network
 
