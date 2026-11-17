@@ -136,16 +136,28 @@ Verified the saved image by starting a new container and checking that the scrip
 - ICMP
 - ARP
 - Network Emulator
-
 ## 6. Python Environment and Dependencies
 
-Created a Python virtual environment and installed Scapy:
+The Dockerfile installs Python 3 and Scapy using Ubuntu packages.
+
+A Python virtual environment was created with access to the system-installed Scapy package:
 
 ```bash
-python3 -m venv venv
+mkdir -p /root/lab2_frames_ip
+cd /root/lab2_frames_ip
+python3 -m venv --system-site-packages venv
 source venv/bin/activate
-pip install scapy
 ```
+
+### Main Python Scripts
+
+**`ethernet_raw_frame.py`**
+
+Generates custom Ethernet frames without an IPv4 packet, using the experimental EtherType `0x88B5`.
+
+**`icmp_frame.py`**
+
+Constructs Ethernet/IPv4/ICMP Echo Request packets with configurable source address, destination address, next-hop MAC, TTL and sequence number.
 
 ### Main Python Scripts
 
